@@ -47,7 +47,7 @@ function CardBussinessWhoRolledTheDice({ src, title, description }: { src?: stri
                     className="object-cover object-center"
                 />
             </div>
-            <div className="flex p-6 flex-col gap-2 rounded-b-[32px] bg-white">
+            <div className="flex p-6 flex-col gap-2 rounded-b-[32px] w-full bg-white">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-4">
                         <h5 className="text-[#0F218D] text-center text-[18px] font-bold leading-[140%]">
