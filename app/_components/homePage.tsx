@@ -26,7 +26,7 @@ function HomePage() {
                 {CreativitySvg}
                 {/* {FiftyFiveLanguageSvg} */}
                 <div className=" absolute w-42 h-42 left-[121px] top-[-68px] rotate-[-10deg]">
-                    <Image src={"/images/Group.png"} alt="Group" fill/>
+                    <Image src={"/images/Group.png"} alt="Group" fill />
                 </div>
             </div>
         </div>
