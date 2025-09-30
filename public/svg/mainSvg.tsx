@@ -48,6 +48,29 @@ export const grayNoiseSvg = (
     </defs>
   </svg>
 )
+export const BlueNoiseSvg = (<svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full absolute inset-0" fill="none">
+  <g filter="url(#filter0_n_841_6569)">
+    <rect className="w-full h-full " fill="white" fill-opacity="0.04" />
+  </g>
+  <defs>
+    <filter id="filter0_n_841_6569" x="0" y="0" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.40000000596046448 0.40000000596046448" stitchTiles="stitch" numOctaves="3" result="noise" seed="9340" />
+      <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+      <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+        <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+      </feComponentTransfer>
+      <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+      <feFlood flood-color="#FFFFFF" result="color1Flood" />
+      <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+      <feMerge result="effect1_noise_841_6569">
+        <feMergeNode in="shape" />
+        <feMergeNode in="color1" />
+      </feMerge>
+    </filter>
+  </defs>
+</svg>)
 export const CheckenSvg = (
   <svg xmlns="http://www.w3.org/2000/svg" className="absolute right-[236px] top-[-84px]" width="139" height="138" viewBox="0 0 139 138" fill="none">
     <g clip-path="url(#clip0_841_6575)">

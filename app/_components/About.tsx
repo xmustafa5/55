@@ -23,7 +23,7 @@ function About() {
                 </div>
             </div>
             <p className="text-[#8084AA] text-[32px] font-medium leading-[120%] max-w-[1290px]">
-                <span className="text-[#13131D]">
+                <span className="text-[#13131D] px-2">
                     at 55 Creative Agency, we roll the dice
                 </span>
                 with creativity and calculated strategy, from gamechanging concepts to powerful expressions of identity, we transform visions into unforgettable experiences, whether it’s a campaign that turns heads or an event that leaves a lasting mark, we bring precision, passion, and a spark of the Unexpected

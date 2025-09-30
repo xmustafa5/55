@@ -1,9 +1,11 @@
+import { BlueNoiseSvg } from "@/public/svg/mainSvg";
 import Image from "next/image";
 
 function Services55() {
     return (
-        <div className="flex w-full flex-col gap-14 py-[88px] px-[72px] bg-[#001487]">
-            <div className="flex p-2 items-end content-end gap-6 flex-wrap">
+        <div className="relative flex w-full flex-col gap-14 py-[88px] px-[72px] bg-[#001487]">
+            {BlueNoiseSvg}
+            <div className="flex z-10 p-2 items-end content-end gap-6 flex-wrap">
                 <div className="flex min-w-[320px] flex-col gap-6 grow shrink-0 basis-0">
                     <div className="flex gap-1  ">
                         <h2 className="text-[#FAFBFD] text-[48px] font-medium leading-[120%]">
@@ -25,7 +27,7 @@ function Services55() {
                     </div>
                 </div>
             </div>
-            <div className="flex content-start gap-6 flex-wrap">
+            <div className="flex z-10 content-start gap-6 flex-wrap">
                 <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
                 <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
                 <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
