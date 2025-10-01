@@ -4,6 +4,7 @@ import Services55 from "./_components/55Services";
 import BusinessWhoRolledTheDice from "./_components/BusnessWhoRolledTheDice";
 import About from "./_components/About";
 import RollChangesTheGameOursDidbutwhy from "./_components/Not Every DicRollChangesTheGameOursDidbutwhy";
+import YourNextWinning from "./_components/YourNextWinning";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <RollChangesTheGameOursDidbutwhy />
       <BusinessWhoRolledTheDice />
       <About />
+      <YourNextWinning />
     </div>
   );
 }
