@@ -3,15 +3,15 @@ import Image from "next/image";
 
 function Services55() {
     return (
-        <div className="relative flex w-full flex-col gap-14 py-[88px] px-[72px] bg-[#001487]">
+        <div className="relative flex w-full flex-col gap-14 py-[88px] px-[22px] md:px-[52px] lg:px-[72px] bg-[#001487]">
             {BlueNoiseSvg}
             <div className="flex z-10 p-2 items-end content-end gap-6 flex-wrap">
                 <div className="flex min-w-[320px] flex-col gap-6 grow shrink-0 basis-0">
                     <div className="flex gap-1  ">
-                        <h2 className="text-[#FAFBFD] text-[48px] font-medium leading-[120%]">
+                        <h2 className="text-[#FAFBFD] text-[32px] md:text-[40px] lg:text-[48px] font-medium leading-[120%]">
                             55
                         </h2>
-                        <h1 className="text-[#FAFBFD] font-larken text-[48px] italic font-medium leading-[120%]">
+                        <h1 className="text-[#FAFBFD] font-larken text-[32px] md:text-[40px] lg:text-[48px] italic font-medium leading-[120%]">
                             Services
                         </h1>
                     </div>
@@ -50,7 +50,7 @@ function Card55Services({ src, title, description }: { src: string, title: strin
                 />
             </div>
             <div className="flex flex-col gap-4">
-                <h3 className="flex flex-col justify-center w-[225.16px] font-bold h-[92.2px] text-[#0F218D] text-[41.1px]  leading-[43.2px]">
+                <h3 className="flex flex-col justify-center w-[225.16px] font-bold h-[92.2px] text-[#0F218D] text-[40px] lg:text-[41.1px]  leading-[43.2px]">
                     {title}
                 </h3>
                 <p className="text-[#0F218D] text-base font-medium leading-[140%]">

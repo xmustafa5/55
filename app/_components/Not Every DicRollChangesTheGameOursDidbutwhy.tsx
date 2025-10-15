@@ -1,9 +1,9 @@
 function RollChangesTheGameOursDidbutwhy() {
     return (
-        <div className="flex w-full py-[88px] px-[72px] flex-col gap-2 bg-white">
+        <div className="flex w-full py-[88px] px-[22px] md:px-[52px] lg:px-[72px] flex-col gap-2 bg-white">
             <div className="flex flex-col items-center gap-10">
                 <div className="flex flex-col items-center gap-4">
-                    <p className="text-[#0F218D] max-w-[696px]  text-center text-[48px] font-bold leading-[120%]">
+                    <p className="text-[#0F218D] max-w-[696px]  text-center text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[120%]">
                         Not Every Dice Roll Changes the Game, Ours Did, <span className="italic font-larken">
                             but why?
                         </span>

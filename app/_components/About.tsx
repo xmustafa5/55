@@ -1,8 +1,8 @@
 function About() {
     return (
-        <div className="flex w-full bg-white py-[88px] px-[72px] flex-col gap-14">
-            <div className="flex flex-col gap-6">
-                <h6 className="text-[#0F218D] text-[48px] font-bold leading-[120%]">
+        <div className="flex w-full bg-white py-[88px] px-[22px] md:px-[52px] lg:px-[72px] flex-col gap-6 lg:gap-14">
+            <div className="flex lg:flex-col gap-4 lg:gap-6">
+                <h6 className="text-[#0F218D] text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[120%]">
                     About
                 </h6>
                 <div className="flex items-center gap-[8.75px]">

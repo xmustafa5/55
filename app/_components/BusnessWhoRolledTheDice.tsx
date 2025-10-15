@@ -3,11 +3,11 @@ import Image from "next/image";
 
 function BusinessWhoRolledTheDice() {
     return (
-        <div className="flex relative flex-col items-center gap-14 py-[88px] w-full px-[72px] bg-white self-auto">
+        <div className="flex relative flex-col items-center gap-14 py-[88px] w-full px-[32px] md:px-[52px] lg:px-[72px] bg-white self-auto">
             {grayNoiseSvg}
             <div className="flex flex-col z-10 items-center gap-4">
                 <div className="flex flex-col items-center gap-[21px]">
-                    <h1 className="text-[#0F218D] text-center text-[48px]  font-bold leading-[110%]">
+                    <h1 className="text-[#0F218D] text-center text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[110%]">
                         <span className="italic font-larken px-4">
                             Business
                         </span>
@@ -38,8 +38,8 @@ function BusinessWhoRolledTheDice() {
 }
 function CardBussinessWhoRolledTheDice({ src, title, description }: { src?: string, title?: string, description?: string }) {
     return (
-        <div className="flex min-w-[320px]  flex-col items-center gap-[-8px] grow shrink-0 basis-0">
-            <div className="flex h-[264.24px] w-full min-h-[203.262px] p-4 flex-col gap-2 aspect-[416/264.24] rounded-t-3xl overflow-hidden relative">
+        <div className="flex min-w-[196px] md:min-w-[320px]  flex-col items-center gap-[-8px] grow shrink-0 basis-0">
+            <div className="flex h-[264.24px] w-full min-h-[203.262px] p-4 flex-col gap-2 md:aspect-[416/264.24] rounded-t-3xl overflow-hidden relative">
                 <Image
                     src={"/images/3.png"}
                     alt={"title"}

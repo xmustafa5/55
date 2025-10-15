@@ -2,11 +2,11 @@ import { noiseSvg } from "@/public/svg/mainSvg";
 
 function Footer() {
     return (
-        <div className="relative flex w-full py-[88px] px-[72px] flex-col gap-10 bg-[#001487]">
+        <div className="relative flex w-full py-[88px] px-[22px] md:px-[52px] lg:px-[72px] flex-col gap-10 bg-[#001487]">
             {noiseSvg}
             <div className="flex z-10 pb-6 items-center content-center gap-4 flex-wrap border-b border-b-white/17">
                 <div className="flex min-w-[312px] items-center grow shrink-0 basis-0">
-                    <h6 className="text-[#FAFBFD] text-[181px] italic font-medium leading-[180.005px] font-larken">
+                    <h6 className="text-[#FAFBFD] text-[56px] md:text-[80px] lg:text-[181px] italic font-medium  leading-[120%] lg:leading-[180.005px] font-larken">
                         Sey Hello!
                     </h6>
                 </div>
@@ -65,7 +65,7 @@ function Footer() {
                 <p className="flex h-[19.5px] min-w-[300px] flex-col justify-center grow shrink-0 basis-0 text-white text-[14.875px] font-light leading-[19.2px]">
                     ©fiftyfive2025 / Privacy Policy
                 </p>
-                <div className="flex min-w-[300px] justify-end items-center gap-2 grow shrink-0 basis-0">
+                <div className="hidden lg:flex min-w-[300px]  justify-end items-center gap-2 grow shrink-0 basis-0">
                     <p className="flex w-[48.21px] h-[19.5px] flex-col justify-center text-[#E5E5E5] text-[14.875px] font-light leading-[21.6px]">
                         Site by
                     </p>
@@ -120,7 +120,7 @@ function Footer() {
 function CardInfo({ title, subTitle }: { title: string, subTitle: string }) {
     return (
         <div className="flex min-w-[162px] px-4 flex-col gap-2 grow shrink-0 basis-0 border-r border-r-white/23">
-            <p className="text-[#FAFBFD] text-[15.375px] leading-[20.8px] tracking-[0.64px] uppercase">
+            <p className="text-[#FAFBFD] text-[14px] lg:text-[15.375px] leading-[20.8px] tracking-[0.64px] uppercase">
                 {title}
             </p>
             <p className="flex h-[21.5px] flex-col justify-center text-white/88 text-base font-light leading-[140%]">
