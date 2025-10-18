@@ -12,6 +12,36 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(320deg);
+  }
+}
+
+@keyframes counter-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-320deg);
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin-slow 8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .animate-counter-spin {
+    animation: counter-spin 8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
