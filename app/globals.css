@@ -12,33 +12,157 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@keyframes spin-slow {
+/* Orbit animation for each box - uses rotate on parent + translateX to create orbit */
+/* Box 1: Starts at center, orbits, then moves to LEFT TOP position */
+@keyframes orbit-box-1 {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(0deg) translateX(180px) rotate(0deg);
+  }
+
+  35% {
+    transform: rotate(720deg) translateX(180px) rotate(-720deg);
   }
 
   100% {
-    transform: rotate(320deg);
+    transform: translateX(0) translate(280px, -30px);
   }
 }
 
-@keyframes counter-spin {
+/* Box 2: Starts at center, orbits, then moves to LEFT BOTTOM */
+@keyframes orbit-box-2 {
+  0% {
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(72deg) translateX(180px) rotate(-72deg);
+  }
+
+  35% {
+    transform: rotate(792deg) translateX(180px) rotate(-792deg);
+  }
+
+  100% {
+    transform: translateX(0) translate(200px, 70px);
+  }
+}
+
+/* Box 3: Starts at center, orbits, then moves to RIGHT TOP */
+@keyframes orbit-box-3 {
+  0% {
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(144deg) translateX(180px) rotate(-144deg);
+  }
+
+  35% {
+    transform: rotate(864deg) translateX(180px) rotate(-864deg);
+  }
+
+  100% {
+    transform: translateX(0) translate(-220px, -110px);
+  }
+}
+
+/* Box 4: Starts at center, orbits, then moves to RIGHT MIDDLE */
+@keyframes orbit-box-4 {
+  0% {
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(216deg) translateX(180px) rotate(-216deg);
+  }
+
+  35% {
+    transform: rotate(936deg) translateX(180px) rotate(-936deg);
+  }
+
+  100% {
+    transform: translateX(0) translate(-280px, 40);
+  }
+}
+
+/* Box 5: Starts at center, orbits, then moves to RIGHT BOTTOM */
+@keyframes orbit-box-5 {
+  0% {
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(288deg) translateX(150px) rotate(-288deg);
+  }
+
+  35% {
+    transform: rotate(1008deg) translateX(150px) rotate(-1008deg);
+  }
+
+  100% {
+    transform: translateX(0) translate(180px, -110px);
+  }
+}
+
+/* Keep boxes upright during rotation */
+@keyframes keep-upright {
   0% {
     transform: rotate(0deg);
   }
 
+  35% {
+    transform: rotate(0deg);
+  }
+
   100% {
-    transform: rotate(-320deg);
+    transform: rotate(0deg);
+  }
+}
+
+/* Lines fade in at the end */
+@keyframes lines-fade {
+
+  0%,
+  35% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
 @layer utilities {
-  .animate-spin-slow {
-    animation: spin-slow 8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  .animate-orbit-box-1 {
+    animation: orbit-box-1 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
   }
 
-  .animate-counter-spin {
-    animation: counter-spin 8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  .animate-orbit-box-2 {
+    animation: orbit-box-2 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
+  }
+
+  .animate-orbit-box-3 {
+    animation: orbit-box-3 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
+  }
+
+  .animate-orbit-box-4 {
+    animation: orbit-box-4 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
+  }
+
+  .animate-orbit-box-5 {
+    animation: orbit-box-5 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
+  }
+
+  .animate-keep-upright {
+    animation: keep-upright 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
+  }
+
+  .animate-lines-fade {
+    animation: lines-fade 8s cubic-bezier(0.7, 0.0, 0.3, 1) forwards;
   }
 }
 
