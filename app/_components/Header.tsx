@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 function Header() {
@@ -27,18 +28,18 @@ function Header() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex justify-center items-center gap-4">
-                    <Link title="Projects" />
-                    <Link title="Fifty-five" />
-                    <Link title="Services" />
+                    <LinkHeader title="Projects" />
+                    <LinkHeader title="Fifty-five" />
+                    <LinkHeader title="Services" />
                 </div>
 
                 {/* Desktop Contact Button */}
                 <div className="hidden lg:flex items-center gap-6">
-                    <div className="flex justify-center items-center gap-2 px-6 py-[10px] rounded-[40px] border-2 border-white/20 bg-white cursor-pointer hover:bg-white/90 transition-colors">
+                    <Link href={"/contact-us"} className="flex justify-center items-center gap-2 px-6 py-[10px] rounded-[40px] border-2 border-white/20 bg-white cursor-pointer hover:bg-white/90 transition-colors">
                         <p className="text-[#001487] text-base leading-[110%]">
                             Contact us
                         </p>
-                    </div>
+                    </Link>
                 </div>
 
                 {/* Mobile Burger Menu Button */}
@@ -56,21 +57,21 @@ function Header() {
             {/* Mobile Menu */}
             <div className={`fixed inset-0 bg-[#253698] z-20 lg:hidden transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
-                    <Link title="Projects" onClick={() => setIsMenuOpen(false)} />
-                    <Link title="Fifty-five" onClick={() => setIsMenuOpen(false)} />
-                    <Link title="Services" onClick={() => setIsMenuOpen(false)} />
-                    <div className="flex justify-center items-center gap-2 px-6 py-[10px] rounded-[40px] border-2 border-white/20 bg-white mt-4 cursor-pointer">
+                    <LinkHeader title="Projects" onClick={() => setIsMenuOpen(false)} />
+                    <LinkHeader title="Fifty-five" onClick={() => setIsMenuOpen(false)} />
+                    <LinkHeader title="Services" onClick={() => setIsMenuOpen(false)} />
+                    <Link href={"/contact-us"} className="flex justify-center items-center gap-2 px-6 py-[10px] rounded-[40px] border-2 border-white/20 bg-white mt-4 cursor-pointer">
                         <p className="text-[#001487] text-base leading-[110%]">
                             Contact us
                         </p>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </>
     )
 }
 
-function Link({ title, onClick }: { title: string; onClick?: () => void }) {
+function LinkHeader({ title, onClick }: { title: string; onClick?: () => void }) {
     return (
         <div
             className="flex justify-center items-center gap-2 px-4 py-[10px] rounded-[40px] bg-[#28399B] cursor-pointer hover:bg-[#303fb5] transition-colors"

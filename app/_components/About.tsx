@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function About() {
     return (
         <div className="flex w-full bg-white py-[88px] px-[22px] md:px-[52px] lg:px-[72px] flex-col gap-6 lg:gap-14">
@@ -33,11 +35,11 @@ function About() {
                 If you think dice are just a game? Not every roll lands on double fives, But when it does, luck smiles, and that’s exactly who we are.
             </p>
             <div className="flex gap-2">
-                <div className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-[#0F218D] [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
+                <Link href={"/contact-us"} className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-[#0F218D] [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
                     <p className="text-[#0F218D] text-[18px] font-bold leading-[20.26px] capitalize">
                         Contact us
                     </p>
-                </div>
+                </Link>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import { noiseSvg } from "@/public/svg/mainSvg";
+import Link from "next/link";
 
 function Footer() {
     return (
@@ -19,14 +20,14 @@ function Footer() {
                         </p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <div className="flex py-4 px-12 items-center gap-2 rounded-[30.46px] border border-white/16 bg-white/10 [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
+                        <Link href={"/contact-us"} className="flex py-4 px-12 items-center gap-2 rounded-[30.46px] border border-white/16 bg-white/10 [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
                             <p className="text-[#FAFBFD] text-[18px] font-medium leading-[140%]">
                                 Contact us
                             </p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                 <path d="M8 16.3535L16 8.35352M16 8.35352V14.3535M16 8.35352H10" stroke="#FAFBFD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                        </div>
+                        </Link >
                     </div>
                 </div>
             </div>
