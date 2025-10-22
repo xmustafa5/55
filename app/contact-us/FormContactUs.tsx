@@ -1,6 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+interface Service {
+    geoid: string
+    name: string
+    description: string
+    image: string | null
+    is_visible: {
+        value: number
+        label: string
+    }
+    created_at: string
+    projects_count: number
+}
 
 interface FormData {
     fullName: string
@@ -26,6 +39,26 @@ function FormContactUs() {
 
     const [errors, setErrors] = useState<FormErrors>({})
     const [touched, setTouched] = useState<Record<string, boolean>>({})
+    const [services, setServices] = useState<Service[]>([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    useEffect(() => {
+        fetchServices()
+    }, [])
+
+    const fetchServices = async () => {
+        try {
+            setIsLoading(true)
+            const response = await fetch('http://main-website-api.55-iq.com/api/website/services')
+            const data = await response.json()
+            setServices(data.items || [])
+        } catch (error) {
+            console.error('Error fetching services:', error)
+        } finally {
+            setIsLoading(false)
+        }
+    }
 
     const validateField = (name: keyof FormData, value: string): string | undefined => {
         switch (name) {
@@ -66,7 +99,7 @@ function FormContactUs() {
         setErrors(prev => ({ ...prev, [name]: error }))
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
         const newErrors: FormErrors = {}
@@ -89,8 +122,40 @@ function FormContactUs() {
         })
 
         if (!hasErrors) {
-            console.log('Form submitted:', formData)
-            alert('Form submitted successfully!')
+            try {
+                setIsSubmitting(true)
+                const response = await fetch('http://main-website-api.55-iq.com/api/website/visitors', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: formData.fullName,
+                        phone: formData.phoneNumber,
+                        visitor_message: formData.projectBrief,
+                        servies_geoid: formData.service
+                    })
+                })
+
+                if (response.ok) {
+                    alert('Form submitted successfully!')
+                    setFormData({
+                        fullName: '',
+                        phoneNumber: '',
+                        service: '',
+                        projectBrief: ''
+                    })
+                    setTouched({})
+                } else {
+                    const errorData = await response.json()
+                    alert('Error submitting form: ' + (errorData.message || 'Please try again'))
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error)
+                alert('Error submitting form. Please try again.')
+            } finally {
+                setIsSubmitting(false)
+            }
         }
     }
 
@@ -120,6 +185,8 @@ function FormContactUs() {
                 onChange={(value) => handleChange('service', value)}
                 onBlur={() => handleBlur('service')}
                 error={touched.service ? errors.service : undefined}
+                services={services}
+                isLoading={isLoading}
             />
             <TextAreaField
                 label="Project Brief"
@@ -131,9 +198,10 @@ function FormContactUs() {
             />
             <button
                 type="submit"
-                className="flex py-4 px-6 justify-center items-center gap-2 rounded-lg bg-[#0F218D] text-white text-lg font-semibold leading-[110%] hover:bg-[#0a1665] transition-colors"
+                disabled={isSubmitting}
+                className="flex py-4 px-6 justify-center items-center gap-2 rounded-lg bg-[#0F218D] text-white text-lg font-semibold leading-[110%] hover:bg-[#0a1665] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-                Submit
+                {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
         </form>
     )
@@ -183,9 +251,11 @@ interface SelectFieldProps {
     onChange: (value: string) => void
     onBlur: () => void
     error?: string
+    services: Service[]
+    isLoading: boolean
 }
 
-function SelectField({ label, placeholder, value, onChange, onBlur, error }: SelectFieldProps) {
+function SelectField({ label, placeholder, value, onChange, onBlur, error, services, isLoading }: SelectFieldProps) {
     return (
         <div className="flex min-w-[320px] flex-col gap-2">
             <div className={`flex py-[15px] px-6 items-center gap-2 rounded-lg border ${error ? 'border-[#E2424D]' : 'border-[#DCDCE0]'} bg-white/60`}>
@@ -197,14 +267,17 @@ function SelectField({ label, placeholder, value, onChange, onBlur, error }: Sel
                         value={value}
                         onChange={(e) => onChange(e.target.value)}
                         onBlur={onBlur}
+                        disabled={isLoading}
                         className="text-[#484C6C] text-[18px] font-medium leading-[110%] bg-transparent outline-none focus:outline-none appearance-none"
                     >
-                        <option value="" disabled>{placeholder}</option>
-                        <option value="game-dev">Game Development</option>
-                        <option value="web-dev">Web Development</option>
-                        <option value="mobile-dev">Mobile Development</option>
-                        <option value="ui-ux">UI/UX Design</option>
-                        <option value="consulting">Consulting</option>
+                        <option value="" disabled>
+                            {isLoading ? 'Loading services...' : placeholder}
+                        </option>
+                        {services.map((service) => (
+                            <option key={service.geoid} value={service.geoid}>
+                                {service.name}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
