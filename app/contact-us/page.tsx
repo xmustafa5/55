@@ -1,7 +1,8 @@
+import FormContactUs from "./FormContactUs"
+
 function page() {
     return (
         <div className="flex w-full pt-22 flex-col justify-end gap-2">
-
             <div className="flex py-[88px] px-[72px] items-center content-center gap-8 flex-wrap">
                 <div className="flex min-w-[500px] flex-col gap-[61px] grow shrink-0 basis-0">
                     <div className="flex flex-col gap-4">
@@ -13,10 +14,11 @@ function page() {
                             IN THE GAME.
                         </p>
                         <p className="min-w-[400px] text-[#0F218D] text-[18px] font-medium leading-[140%]">
-                            Ready to see your game or product go from cool to legendary? Our cu
+                            Ready to see your game or product go from cool tolegendary? Our cu
                         </p>
+                        <FormContactUs />
                     </div>
-                    bodycomponent
+
                 </div>
                 <div className="flex min-w-[400px] max-w-[480px] py-[142px] px-[25px] flex-col gap-[55px] grow shrink-0 basis-0 rounded-xl bg-[#152891]">
                     <div className="flex w-[390px] flex-col justify-center gap-6">
