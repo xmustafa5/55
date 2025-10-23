@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function page() {
     return (
-        <div className="flex relative flex-col items-center gap-14 py-[88px] w-full px-[32px] md:px-[52px] lg:px-[72px] bg-white self-auto">
+        <div className="flex relative pt-28 flex-col items-center gap-14 py-[88px] w-full px-[32px] md:px-[52px] lg:px-[72px] bg-white self-auto">
             {grayNoiseSvg}
             <div className="flex flex-col z-10 items-center gap-4">
                 <div className="flex flex-col items-center gap-[21px]">
@@ -19,6 +19,15 @@ function page() {
                 </h6>
             </div>
             <div className="flex z-10 justify-center content-start gap-6 flex-wrap">
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
+                <CardBussinessWhoRolledTheDice />
                 <CardBussinessWhoRolledTheDice />
                 <CardBussinessWhoRolledTheDice />
                 <CardBussinessWhoRolledTheDice />
