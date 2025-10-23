@@ -1,8 +1,7 @@
 import { grayNoiseSvg } from "@/public/svg/mainSvg";
 import Image from "next/image";
-import Link from "next/link";
 
-function BusinessWhoRolledTheDice() {
+function page() {
     return (
         <div className="flex relative flex-col items-center gap-14 py-[88px] w-full px-[32px] md:px-[52px] lg:px-[72px] bg-white self-auto">
             {grayNoiseSvg}
@@ -27,15 +26,15 @@ function BusinessWhoRolledTheDice() {
                 <CardBussinessWhoRolledTheDice />
                 <CardBussinessWhoRolledTheDice />
             </div>
-            <div className="flex z-10 gap-2">
+            {/* <div className="flex z-10 gap-2">
                 <Link href={"/view-all-our-work"} className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-[#0F218D] [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
                     <p className="text-[#0F218D] text-[18px] font-bold leading-[20.26px] capitalize">
                         View all our works
                     </p>
                 </Link >
-            </div>
+            </div> */}
         </div>
-    );
+    )
 }
 function CardBussinessWhoRolledTheDice({ src, title, description }: { src?: string, title?: string, description?: string }) {
     return (
@@ -72,4 +71,4 @@ function CardBussinessWhoRolledTheDice({ src, title, description }: { src?: stri
         </div>
     );
 }
-export default BusinessWhoRolledTheDice;
+export default page
