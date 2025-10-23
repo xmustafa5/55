@@ -85,7 +85,7 @@ function FormContactUs() {
         if (!hasErrors) {
             try {
                 setIsSubmitting(true)
-                const response = await fetch('http://main-website-api.55-iq.com/api/website/visitors', {
+                const response = await fetch('https://main-website-api.55-iq.com/api/website/visitors', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

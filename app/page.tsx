@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-start">
       <HomePage />
-      <Services55 />
+      <Services55 exploreMore />
       <RollChangesTheGameOursDidbutwhy />
       <BusinessWhoRolledTheDice />
       <About />

@@ -28,9 +28,9 @@ function Header() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex justify-center items-center gap-4">
-                    <LinkHeader title="Projects" />
-                    <LinkHeader title="Fifty-five" />
-                    <LinkHeader title="Services" />
+                    <LinkHeader title="Projects" href="/project" />
+                    <LinkHeader title="Fifty-five" href="/" />
+                    <LinkHeader title="Services" href="/service" />
                 </div>
 
                 {/* Desktop Contact Button */}
@@ -57,9 +57,9 @@ function Header() {
             {/* Mobile Menu */}
             <div className={`fixed inset-0 bg-[#253698] z-20 lg:hidden transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
-                    <LinkHeader title="Projects" onClick={() => setIsMenuOpen(false)} />
-                    <LinkHeader title="Fifty-five" onClick={() => setIsMenuOpen(false)} />
-                    <LinkHeader title="Services" onClick={() => setIsMenuOpen(false)} />
+                    <LinkHeader title="Projects" href="/project" onClick={() => setIsMenuOpen(false)} />
+                    <LinkHeader title="Fifty-five" href="/" onClick={() => setIsMenuOpen(false)} />
+                    <LinkHeader title="Services" href="/service" onClick={() => setIsMenuOpen(false)} />
                     <Link href={"/contact-us"} className="flex justify-center items-center gap-2 px-6 py-[10px] rounded-[40px] border-2 border-white/20 bg-white mt-4 cursor-pointer">
                         <p className="text-[#001487] text-base leading-[110%]">
                             Contact us
@@ -71,7 +71,21 @@ function Header() {
     )
 }
 
-function LinkHeader({ title, onClick }: { title: string; onClick?: () => void }) {
+function LinkHeader({ title, href, onClick }: { title: string; href?: string; onClick?: () => void }) {
+    if (href) {
+        return (
+            <Link
+                href={href}
+                className="flex justify-center items-center gap-2 px-4 py-[10px] rounded-[40px] bg-[#28399B] cursor-pointer hover:bg-[#303fb5] transition-colors"
+                onClick={onClick}
+            >
+                <h4 className="text-white text-base leading-[140%]">
+                    {title}
+                </h4>
+            </Link>
+        )
+    }
+
     return (
         <div
             className="flex justify-center items-center gap-2 px-4 py-[10px] rounded-[40px] bg-[#28399B] cursor-pointer hover:bg-[#303fb5] transition-colors"

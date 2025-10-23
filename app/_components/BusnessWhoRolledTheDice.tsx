@@ -28,7 +28,7 @@ function BusinessWhoRolledTheDice() {
                 <CardBussinessWhoRolledTheDice />
             </div>
             <div className="flex z-10 gap-2">
-                <Link href={"/view-all-our-work"} className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-[#0F218D] [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
+                <Link href={"/project"} className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-[#0F218D] [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
                     <p className="text-[#0F218D] text-[18px] font-bold leading-[20.26px] capitalize">
                         View all our works
                     </p>

@@ -1,7 +1,48 @@
 import { BlueNoiseSvg } from "@/public/svg/mainSvg";
 import Image from "next/image";
+import Link from "next/link";
 
-function Services55() {
+interface ServiceItem {
+    geoid: string;
+    name: string;
+    description: string;
+    image: string | null;
+    is_visible: {
+        value: number;
+        label: string;
+    };
+    created_at: string;
+    projects_count: number;
+}
+
+interface ServicesResponse {
+    items: ServiceItem[];
+    total_pages: number;
+    per_page: number;
+    current_page: number;
+}
+
+async function fetchServices(): Promise<ServiceItem[]> {
+    try {
+        const response = await fetch('https://main-website-api.55-iq.com/api/website/services', {
+            cache: 'no-store'
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch services');
+        }
+
+        const data: ServicesResponse = await response.json();
+        return data.items.filter(item => item.is_visible.value === 1);
+    } catch (error) {
+        console.error('Error fetching services:', error);
+        return [];
+    }
+}
+
+async function Services55({ exploreMore = false }: { exploreMore: boolean }) {
+    const services = await fetchServices();
+
     return (
         <div className="relative flex w-full flex-col gap-14 py-[88px] px-[22px] md:px-[52px] lg:px-[72px] bg-[#001487]">
             {BlueNoiseSvg}
@@ -20,20 +61,28 @@ function Services55() {
                     </p>
                 </div>
                 <div className="flex gap-4">
-                    <div className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-white/[.16] bg-white/10 [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
-                        <p className="text-white text-[18px] font-bold leading-[20.26px] capitalize">
-                            Explore More
-                        </p>
-                    </div>
+                    {exploreMore &&
+                        <Link href={"/service"} className="flex py-4 px-12 items-center gap-[25px] rounded-[30.46px] border border-white/[.16] bg-white/10 [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
+                            <p className="text-white text-[18px] font-bold leading-[20.26px] capitalize">
+                                Explore More
+                            </p>
+                        </Link>
+                    }
                 </div>
             </div>
             <div className="flex z-10 content-start gap-6 flex-wrap">
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
-                <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
+                {services.length > 0 ? (
+                    services.map((service) => (
+                        <Card55Services
+                            key={service.geoid}
+                            src={service.image || "/images/Digital-Marketing.png"}
+                            title={service.name}
+                            description={service.description}
+                        />
+                    ))
+                ) : (
+                    <Card55Services src="/images/Digital-Marketing.png" title="Digital Marketing" description="We strategically manage your digital presence through content, advertising campaigns, and community management. Our focus is on delivering clear messages, engaging audiences, and achieving measurable results that elevate your brand." />
+                )}
             </div>
         </div>
     );
