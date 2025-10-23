@@ -1,3 +1,4 @@
+import SocileMediaIcon from "../_components/SocelMediaIcons"
 import FormContactUs from "./FormContactUs"
 
 function page() {
@@ -49,12 +50,7 @@ function page() {
                             </svg>
                         </div>
                         <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-4">
-                                <IconD />
-                                <IconD />
-                                <IconD />
-                                <IconD />
-                            </div>
+                            <SocileMediaIcon />
                         </div>
                     </div>
                     <div className="flex flex-col justify-center gap-4">

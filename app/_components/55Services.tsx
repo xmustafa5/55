@@ -42,6 +42,7 @@ async function fetchServices(): Promise<ServiceItem[]> {
 
 async function Services55({ exploreMore = false }: { exploreMore: boolean }) {
     const services = await fetchServices();
+    console.log(services);
 
     return (
         <div className="relative flex w-full flex-col gap-14 py-[88px] px-[22px] md:px-[52px] lg:px-[72px] bg-[#001487]">

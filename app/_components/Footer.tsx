@@ -1,5 +1,6 @@
 import { noiseSvg } from "@/public/svg/mainSvg";
 import Link from "next/link";
+import SocileMediaIcon from "./SocelMediaIcons";
 
 function Footer() {
     return (
@@ -55,12 +56,7 @@ function Footer() {
                         <CardInfo title="LOcation" subTitle="Baghdad/Al-Mansour/Tanki Street" />
                     </div>
                 </div>
-                <div className="flex items-center gap-4">
-                    <Icon />
-                    <Icon />
-                    <Icon />
-                    <Icon />
-                </div>
+                <SocileMediaIcon />
             </div>
             <div className="flex z-10 items-center content-center gap-6 flex-wrap">
                 <p className="flex h-[19.5px] min-w-[300px] flex-col justify-center grow shrink-0 basis-0 text-white text-[14.875px] font-light leading-[19.2px]">
@@ -130,15 +126,5 @@ function CardInfo({ title, subTitle }: { title: string, subTitle: string }) {
         </div>
     )
 }
-function Icon() {
-    return (
-        <div className="flex w-[56.532px] p-3 px-4 items-center gap-[7.875px] rounded-[32px] bg-white/5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.74069 4.75089C4.72517 3.69469 6.12718 3.10352 7.78265 3.10352H16.2174C17.8767 3.10352 19.2793 3.69436 20.2634 4.75117C21.2418 5.80193 21.7505 7.25241 21.7505 8.8799V16.8271C21.7505 18.4546 21.2418 19.9051 20.2632 20.9559C19.279 22.0127 17.8761 22.6035 16.2164 22.6035H7.78265C6.12329 22.6035 4.72087 22.0126 3.73706 20.9558C2.75891 19.905 2.25049 18.4545 2.25049 16.8271V8.8799C2.25049 7.25158 2.76166 5.80123 3.74069 4.75089ZM4.83794 5.77364C4.16073 6.50018 3.75049 7.56303 3.75049 8.8799V16.8271C3.75049 18.1449 4.1591 19.2076 4.835 19.9337C5.50524 20.6538 6.4939 21.1035 7.78265 21.1035H16.2164C17.5057 21.1035 18.4949 20.6537 19.1655 19.9336C19.8417 19.2075 20.2505 18.1448 20.2505 16.8271V8.8799C20.2505 7.5622 19.8417 6.49949 19.1656 5.77336C18.4951 5.05327 17.5061 4.60352 16.2174 4.60352H7.78265C6.49877 4.60352 5.5097 5.05295 4.83794 5.77364Z" fill="#FAFBFD" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8445 10.4316C10.3244 10.4316 9.0918 11.6643 9.0918 13.1843C9.0918 14.7044 10.3244 15.937 11.8445 15.937C13.3646 15.937 14.5972 14.7044 14.5972 13.1843C14.5972 11.6643 13.3646 10.4316 11.8445 10.4316ZM7.5918 13.1843C7.5918 10.8359 9.49602 8.93164 11.8445 8.93164C14.193 8.93164 16.0972 10.8359 16.0972 13.1843C16.0972 15.5328 14.193 17.437 11.8445 17.437C9.49602 17.437 7.5918 15.5328 7.5918 13.1843Z" fill="#FAFBFD" />
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8296 8.23227C15.8296 7.66116 16.2933 7.19727 16.8646 7.19727C17.4392 7.19727 17.8986 7.66452 17.8986 8.23227C17.8986 8.80349 17.4358 9.26627 16.8646 9.26627C16.2967 9.26627 15.8296 8.80684 15.8296 8.23227Z" fill="#FAFBFD" />
-            </svg>
-        </div>
-    )
-}
+
 export default Footer;
