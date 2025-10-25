@@ -35,7 +35,7 @@ function SocileMediaIcon() {
         </div>
     )
 }
-function Icon({ icon, title, href }: { icon: any; title: string; href: string }) {
+function Icon({ icon, title, href }: { icon: React.ReactNode; title: string; href: string }) {
     const isEmail = href.startsWith('mailto:');
 
     return (
