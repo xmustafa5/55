@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: 'main-website-api.55-iq.com',
         pathname: '/storage/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'main-website-api.55-iq.com',
+        pathname: '/uploads/**',
+      },
     ],
   },
 };
