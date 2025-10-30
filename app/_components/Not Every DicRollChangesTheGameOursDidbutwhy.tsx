@@ -12,33 +12,33 @@ function RollChangesTheGameOursDidbutwhy() {
                     </p>
                 </div>
                 <div className="flex items-center content-center gap-4 flex-wrap">
-                    <CardRoll />
-                    <CardRoll />
-                    <CardRoll />
-                    <CardRoll />
-                    <CardRoll />
-                    <CardRoll />
+                    <CardRoll index="01" title="Multitalented Team That Thinks Wide, Works Smart." des="Our talented team brings together everything your brand needs, from photography, graphic design, brand building, content marketing, campaign management, and content writing, all perfectly aligned with your brand’s voice to present it exactly how should be." />
+                    <CardRoll index="02" title="Creative Energy That Turns Ideas Into Results" des="We turn ideas into action, from concept to execution, we bring creative ideas, fresh perspectives, and artistic vision to every business we touch, creativity isn’t a department, it’s the core of everything we do." />
+                    <CardRoll index="03" title="Cutting-Edge Tools." des="Our team use the latest technologies and modern methods to elevate your brand, Staying ahead of market trends means your message reaches more people, make a bigger impact." />
+                    <CardRoll index="04" title="Growth You Can Trust" des="your business grow with strategies designed to deliver real results. we create clear plans that guarantee your brand’s success and market strength, your success is our priority  we craft smart strategies that boost your brand and sales.Trust us to drive your growth" />
+                    <CardRoll index="05" title="Reliability  and Quick Response" des="We say what we mean and deliver when we promise every single time,we believe that trust starts with transparency. That’s why we keep our communication clear, honest, and straightforward." />
+                    {/* <CardRoll index="06" title="" des="" /> */}
                 </div>
             </div>
         </div>
     )
 }
-function CardRoll() {
+function CardRoll({ index, title, des }: { index: string, title: string, des: string }) {
     return (
         <div className="relative group overflow-hidden flex h-[380px] min-w-[350px] p-8 px-6 flex-col gap-10 grow shrink-0 basis-0 rounded-3xl border border-[#E5E5E5] bg-white">
             <p className="text-[#0F218D] text-[48px] italic font-medium leading-[110%]">
-                01
+                {index}
             </p>
             <div className="flex flex-col gap-3">
                 <h3 className="text-[#001487] text-xl font-semibold leading-[140%] capitalize">
-                    Multitalented Team That Thinks Wide, Works Smart.
+                    {title}
                 </h3>
                 <p className="text-[#001487] text-sm leading-[140%] capitalize">
-                    Our talented team brings together everything your brand needs, from photography, graphic design, brand building, content marketing, campaign management, and content writing, all perfectly aligned with your brand’s voice to present it exactly how should be.
+                    {des}
                 </p>
             </div>
 
-            <div className=" absolute h-[380px] left-0 top-0 w-full group-hover:translate-y-0 transition-all ease-in duration-200 opacity-0 group-hover:opacity-100 scal0 group-hovecale-100   translate-y-100  flex  min-w-[350px] p-8 px-6  flex-col justify-between grow shrink-0 basis-0 rounded-3xl border border-[#001487] bg-[#0E208D] ">
+            <div className=" absolute h-[380px] left-0 top-0 w-full group-hover:translate-y-0 transition-all ease-in duration-300 opacity-0 group-hover:opacity-100 scal0 group-hovecale-100   translate-y-100  flex  min-w-[350px] p-8 px-6  flex-col justify-between grow shrink-0 basis-0 rounded-3xl border border-[#001487] bg-[#0E208D] ">
                 <div className="flex flex-col gap-6">
                     <p className="text-[#FAFBFD] text-3xl italic font-bold leading-[35.2px] capitalize">
                         Reasons to Partner
