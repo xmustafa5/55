@@ -56,12 +56,12 @@ function BlueCard() {
                 </p>
             </div>
             <div className="flex hover:p-1.5 group transition-all ease-in-out duration-150 flex-col gap-2 rounded-[56px] border-2 border-white/26 w-fit">
-                <Link href={"/contact-us"} className="flex py-3  px-14 items-center gap-4 rounded-[54px] bg-white shadow-[inset_0_4px_9.519px_0_#FFF]">
-                    <p className="text-[#13131D] text-base font-medium leading-[130%]">
+                <Link href={"/contact-us"} className="flex py-4 px-12 items-center gap-2 rounded-[30.46px] border border-white/16 bg-white/10 [box-shadow:inset_0_1px_12px_0_rgba(255,255,255,0.08)]">
+                    <p className="text-[#FAFBFD] text-[18px] font-medium leading-[140%]">
                         Contact us
                     </p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="29" viewBox="0 0 26 29" fill="none">
-                        <rect width="26" height="29" rx="13" fill="#13131D" />
+                        <rect width="26" height="29" rx="13" fill="none" />
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10.805 10.9388C10.805 10.57 11.073 10.271 11.4037 10.271H16.1932C16.5238 10.271 16.7918 10.57 16.7918 10.9388V16.2809C16.7918 16.6497 16.5238 16.9486 16.1932 16.9486C15.8625 16.9486 15.5945 16.6497 15.5945 16.2809V12.5509L10.2305 18.5337C9.99672 18.7945 9.61764 18.7945 9.38385 18.5337C9.15005 18.273 9.15005 17.8502 9.38385 17.5894L14.7478 11.6065H11.4037C11.073 11.6065 10.805 11.3076 10.805 10.9388Z" fill="white" />
                     </svg>
                 </Link>

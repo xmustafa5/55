@@ -9,7 +9,7 @@ function Footer() {
             <div className="flex z-10 pb-6 items-center content-center gap-4 flex-wrap border-b border-b-white/17">
                 <div className="flex min-w-[312px] items-center grow shrink-0 basis-0">
                     <h6 className="text-[#FAFBFD] text-[56px] md:text-[80px] lg:text-[181px] italic font-medium  leading-[120%] lg:leading-[180.005px] font-larken">
-                        Sey Hello!
+                        Say Hello!
                     </h6>
                 </div>
                 <div className="flex min-w-[320px] max-w-[400px] flex-col gap-4 grow shrink-0 basis-0">
